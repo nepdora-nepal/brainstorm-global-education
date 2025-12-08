@@ -489,7 +489,13 @@ const CountryPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden ">
+      <motion.section 
+        className="relative h-[60vh] min-h-[600px] overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <Image
           src={data.image}
           alt={`Study in ${data.name}`}
@@ -524,10 +530,16 @@ const CountryPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Quick Facts Bar */}
-      <section className="bg-primary/10 text-primary py-6">
+      <motion.section 
+        className="bg-primary/10 text-primary py-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {data.facts.map((fact, index) => (
@@ -538,14 +550,14 @@ const CountryPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
       <motion.section 
         className="py-16 md:py-20 bg-background"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -586,7 +598,7 @@ const CountryPage = () => {
         className="py-16 md:py-20"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -621,7 +633,7 @@ const CountryPage = () => {
         className="py-16 md:py-20"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">

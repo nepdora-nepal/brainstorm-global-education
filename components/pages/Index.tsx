@@ -28,7 +28,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <StatsSection />
@@ -37,7 +37,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <TestimonialsSection />
@@ -46,7 +46,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
          <Videos />
@@ -55,7 +55,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <ProcessSection />
@@ -64,7 +64,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
          <CountriesSection />
@@ -73,7 +73,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <WhyChooseUsSection />
@@ -82,7 +82,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <ServicesSection />
@@ -91,7 +91,7 @@ const Index = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
          <CTASection />

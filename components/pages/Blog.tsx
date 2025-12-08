@@ -60,7 +60,7 @@ const Blog = () => {
         className="relative min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         {/* Background Image */}
@@ -96,7 +96,7 @@ const Blog = () => {
         className="py-16 md:py-20 bg-background"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -157,7 +157,7 @@ const Blog = () => {
                 className="group block"
               >
                 <article className="space-y-4 cursor-pointer">
-                  <div className="relative overflow-hidden rounded-xl aspect-[16/10]">
+                  <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
                     <Image
                       src={post.thumbnail_image || "https://images.unsplash.com/photo-1499750310159-5b5f00e9fe59?w=800&fit=crop"}
                       alt={post.title}
@@ -207,7 +207,7 @@ const Blog = () => {
         className="py-16 md:py-20 bg-gray-100  border-t border-border"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-lg mx-auto px-4 sm:px-6 text-center">

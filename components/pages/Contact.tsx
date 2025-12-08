@@ -50,7 +50,7 @@ const Contact = () => {
         className="bg-background py-4 md:px-4 md:py-10 space-y-[5rem]"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-xl mx-auto">
@@ -144,7 +144,7 @@ const Contact = () => {
         className="py-16 md:py-20 bg-muted/20"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">

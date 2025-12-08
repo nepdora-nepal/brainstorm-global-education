@@ -270,7 +270,7 @@ export const BlogDetail: React.FC<BlogDetailProps> = ({ slug }) => {
           className="py-12 md:py-16 bg-muted/30"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUp}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -320,7 +320,7 @@ export const BlogDetail: React.FC<BlogDetailProps> = ({ slug }) => {
         className="py-16 md:py-24 bg-background overflow-hidden"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">

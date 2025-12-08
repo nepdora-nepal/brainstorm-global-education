@@ -1,3 +1,4 @@
+'use client';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { 
@@ -5,6 +6,16 @@ import {
 } from "lucide-react";
 import ieltsImage from "@/components/assets/ielts-class.jpg";
 import Image from "next/image";
+import { motion, Variants } from "motion/react";
+
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
 
 const features = [
   "Trainers with 10+ years experience",
@@ -58,7 +69,13 @@ const IeltsPte = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className=" py-6 md:py-4 mt-24">
+      <motion.section 
+        className=" py-6 md:py-4 mt-24"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -104,12 +121,18 @@ const IeltsPte = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       
 
       {/* Course Cards */}
-      <section className="py-10 md:py-24 bg-background mt-20">
+      <motion.section 
+        className="py-10 md:py-24 bg-background mt-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
            
@@ -151,10 +174,16 @@ const IeltsPte = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Schedule */}
-      <section className="py-10 md:py-24">
+      <motion.section 
+        className="py-10 md:py-24"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -213,7 +242,7 @@ const IeltsPte = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
       {/* <section className="py-16 md:py-24 bg-secondary text-primary-foreground">
