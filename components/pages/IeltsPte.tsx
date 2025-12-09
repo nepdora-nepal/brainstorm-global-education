@@ -68,60 +68,78 @@ const courses = [
 const IeltsPte = () => {
   return (
     <>
-      {/* Hero Section */}
-      <motion.section 
-        className=" py-6 md:py-4 mt-24"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block bg-accent text-accent-foreground px-4 py-1 text-sm font-medium mb-4">
-                Language Preparation
-              </span>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                IELTS & PTE Preparation Classes
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Achieve your target score with our expert-led preparation courses. 
-                Comprehensive training for both IELTS and PTE with proven success rates.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {features.slice(0, 4).map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <ContactDialog triggerText="Enroll Now" title="Enroll Now">
-                  <Button size="lg">
-                    Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </ContactDialog>
-                <Button asChild variant="outline" size="lg" className="">
-                  <a href="tel:+9771234567890">
-                    <Phone className="mr-2 w-5 h-5" /> Call for Details
-                  </a>
-                </Button>
-              </div>
+{/* Hero Section */}
+<motion.section 
+  className="relative overflow-hidden py-6 md:py-8 mt-24"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={fadeInUp}
+>
+  {/* Background Pattern (Copied from Consultancy Hero Section) */}
+  <div className="absolute inset-0 opacity-5">
+    <div
+      className="absolute inset-0"
+      style={{
+        backgroundImage: `
+          repeating-linear-gradient(0deg, transparent, transparent 50px, currentColor 50px, currentColor 51px),
+          repeating-linear-gradient(90deg, transparent, transparent 50px, currentColor 50px, currentColor 51px)
+        `
+      }}
+    />
+  </div>
+
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span className="inline-block bg-accent text-accent-foreground px-4 py-1 text-sm font-medium mb-4">
+          Language Preparation
+        </span>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          IELTS & PTE Preparation Classes
+        </h1>
+        <p className="text-lg text-muted-foreground mb-8">
+          Achieve your target score with our expert-led preparation courses. 
+          Comprehensive training for both IELTS and PTE with proven success rates.
+        </p>
+
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          {features.slice(0, 4).map((feature, index) => (
+            <div key={index} className="flex items-center gap-2 text-sm">
+              <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+              <span>{feature}</span>
             </div>
-            <div className="relative hidden lg:block">
-              <Image
-                src={ieltsImage}
-                width={500}
-                height={500}
-                alt="IELTS and PTE preparation class"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
+          ))}
         </div>
-      </motion.section>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <ContactDialog triggerText="Enroll Now" title="Enroll Now">
+            <Button size="lg">
+              Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </ContactDialog>
+
+          <Button asChild variant="outline" size="lg">
+            <a href="tel:+9771234567890">
+              <Phone className="mr-2 w-5 h-5" /> Call for Details
+            </a>
+          </Button>
+        </div>
+      </div>
+
+      <div className="relative hidden lg:block">
+        <Image
+          src={ieltsImage}
+          width={500}
+          height={500}
+          alt="IELTS and PTE preparation class"
+          className="w-full h-auto rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+</motion.section>
+
 
       
 
