@@ -98,7 +98,7 @@ const IeltsPte = () => {
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <ContactDialog triggerText="Enroll Now">
+                <ContactDialog triggerText="Enroll Now" title="Enroll Now">
                   <Button size="lg">
                     Enroll Now <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
@@ -166,7 +166,7 @@ const IeltsPte = () => {
                       </li>
                     ))}
                   </ul>
-                  <ContactDialog triggerText="Enroll Now">
+                  <ContactDialog triggerText="Enroll Now" title="Enroll Now">
                     <Button className="w-full">
                       Enroll Now
                     </Button>
@@ -237,7 +237,7 @@ const IeltsPte = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   New batches start every week. Limited seats available!
                 </p>
-                <ContactDialog triggerText="Register Now">
+                <ContactDialog triggerText="Register Now" title="Register Now">
                   <Button size="lg" className="w-full">
                     Register Now
                   </Button>

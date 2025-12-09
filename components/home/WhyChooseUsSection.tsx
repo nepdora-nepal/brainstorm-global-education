@@ -37,7 +37,7 @@ const features = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-8 md:py-28 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">

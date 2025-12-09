@@ -518,7 +518,7 @@ const CountryPage = () => {
               {data.tagline}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <ContactDialog>
+              <ContactDialog title="Apply Now">
                 <Button size="lg">
                   Apply Now <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -568,7 +568,7 @@ const CountryPage = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Why Study in {data.name}?</h2>
               <p className="text-muted-foreground mb-4">{data.description}</p>
               <p className="text-muted-foreground mb-6">{data.extendedDescription}</p>
-              <ContactDialog triggerText="Get Free Consultation">
+              <ContactDialog triggerText="Get Free Consultation" title="Get Free Consultation">
                 <Button>
                   Get Free Consultation
                 </Button>
@@ -652,7 +652,7 @@ const CountryPage = () => {
                       <DollarSign className="w-5 h-5 shrink-0 text-primary opacity-80" />
                       <div className="w-full min-w-0">
                         <p className="font-medium text-xs sm:text-sm opacity-80">Tuition Fees</p>
-                        <p className="text-xs sm:text-sm break-words">{data.costs.tuition}</p>
+                        <p className="text-xs sm:text-sm wrap-break-word">{data.costs.tuition}</p>
                       </div>
                     </div>
                     <Separator />
@@ -660,7 +660,7 @@ const CountryPage = () => {
                       <Globe className="w-5 h-5 shrink-0 text-primary opacity-80" />
                       <div className="w-full min-w-0">
                         <p className="font-medium text-xs sm:text-sm opacity-80">Living Costs</p>
-                        <p className="text-xs sm:text-sm break-words">{data.costs.living}</p>
+                        <p className="text-xs sm:text-sm wrap-break-word">{data.costs.living}</p>
                       </div>
                     </div>
                     <Separator />
@@ -668,7 +668,7 @@ const CountryPage = () => {
                       <Calendar className="w-5 h-5 shrink-0 text-primary opacity-80" />
                       <div className="w-full min-w-0">
                         <p className="font-medium text-xs sm:text-sm opacity-80">Intakes</p>
-                        <p className="text-xs sm:text-sm break-words">{data.intakes.join(" • ")}</p>
+                        <p className="text-xs sm:text-sm wrap-break-word">{data.intakes.join(" • ")}</p>
                       </div>
                     </div>
                     <Separator />
@@ -676,7 +676,7 @@ const CountryPage = () => {
                       <DollarSign className="w-5 h-5 shrink-0 text-primary opacity-80" />
                       <div className="min-w-0">
                         <p className="font-medium text-xs sm:text-sm opacity-80">Total Annual Cost</p>
-                        <p className="font-bold text-sm sm:text-base break-words">{data.costs.total}</p>
+                        <p className="font-bold text-sm sm:text-base wrap-break-word">{data.costs.total}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -687,7 +687,7 @@ const CountryPage = () => {
                     <CardTitle className="text-center text-base sm:text-lg">Ready to Apply?</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3 sm:space-y-4">
-                    <ContactDialog>
+                    <ContactDialog title="Apply Now">
                       <Button className="w-full" size="lg">
                         Apply Now <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>

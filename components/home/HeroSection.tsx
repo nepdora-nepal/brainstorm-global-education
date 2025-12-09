@@ -60,7 +60,7 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <ContactDialog triggerText="Book Free Consultation">
+              <ContactDialog triggerText="Book Free Consultation" title="Book Free Consultation">
                 <Button size="lg" className="transition-all text-base">
                   Book Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>

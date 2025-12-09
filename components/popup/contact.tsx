@@ -19,6 +19,7 @@ import { toast } from "sonner";
 interface ContactDialogProps {
   children?: React.ReactNode;
   triggerText?: string;
+  title?: string;
 }
 
 const containerVariants = {
@@ -40,7 +41,7 @@ const itemVariants = {
   },
 };
 
-export const ContactDialog = ({ children, triggerText = "Contact Us" }: ContactDialogProps) => {
+export const ContactDialog = ({ children, triggerText = "Contact Us", title = "Book Free Consultation" }: ContactDialogProps) => {
   const [open, setOpen] = useState(false);
   const { mutate: submitContact, isPending } = useSubmitContactForm();
 
@@ -102,7 +103,7 @@ export const ContactDialog = ({ children, triggerText = "Contact Us" }: ContactD
           <div className="p-5 sm:p-8 md:p-10 flex flex-col justify-center">
             <DialogHeader className="mb-4 sm:mb-6 space-y-1 text-left">
               <DialogTitle className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
-                Book Free <br className="hidden sm:block"/> Consultation
+                {title}
               </DialogTitle>
             </DialogHeader>
 

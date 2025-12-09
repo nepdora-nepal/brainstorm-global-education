@@ -55,7 +55,7 @@ const CTASection = () => {
                     Get personalized guidance from our expert counselors. We&apos;ve helped 2,000+ students achieve their dreams.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <ContactDialog>
+                    <ContactDialog title="Start Your Journey">
                       <Button variant="outline" size="lg" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary h-12 px-8">
                         Book Free Consultation
                       </Button>

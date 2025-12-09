@@ -80,7 +80,7 @@ const About = () => {
               We&apos;ve helped thousands of students achieve their dreams of studying at top universities worldwide.
             </p>
             <div className="flex flex-wrap gap-4">
-              <ContactDialog triggerText="Get Started">
+              <ContactDialog triggerText="Get Started" title="Get Started">
                 <Button size="lg" className="shadow-sm">
                   Get Started <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>

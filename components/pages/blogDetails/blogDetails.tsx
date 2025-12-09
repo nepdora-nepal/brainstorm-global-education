@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useBlog } from "@/hooks/use-blog";
+import { useBlog, useBlogs } from "@/hooks/use-blog";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import ReactMarkdown from "react-markdown";
@@ -18,6 +18,8 @@ interface BlogDetailProps {
 
 export const BlogDetail: React.FC<BlogDetailProps> = ({ slug }) => {
   const { data: blog, isLoading, error } = useBlog(slug);
+  const { data: allBlogs } = useBlogs();
+  const isFeatured = allBlogs?.results?.[0]?.slug === slug;
 
   const defaultImage =
     "https://images.unsplash.com/photo-1492538368677-f6e0ac4024a1?w=800&h=600&fit=crop";
@@ -101,7 +103,7 @@ export const BlogDetail: React.FC<BlogDetailProps> = ({ slug }) => {
 
         {/* Main Thumbnail */}
         {blog.thumbnail_image && (
-          <div className="rounded-3xl overflow-hidden h-[300px] md:h-[450px] w-full shadow-lg mb-10">
+          <div className="rounded-3xl overflow-hidden h-[300px] md:h-[450px] w-full shadow-lg mb-10 relative">
             <Image
               src={blog.thumbnail_image || defaultImage}
               alt={blog.thumbnail_image_alt_description || blog.title}
@@ -110,6 +112,13 @@ export const BlogDetail: React.FC<BlogDetailProps> = ({ slug }) => {
               className="w-full h-full object-cover"
               priority
             />
+            {isFeatured && (
+               <div className="absolute top-4 left-4 z-10">
+                 <span className="bg-primary text-primary-foreground px-3 py-1 text-xs font-semibold rounded">
+                   Featured
+                 </span>
+               </div>
+            )}
           </div>
         )}
 

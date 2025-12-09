@@ -8,6 +8,9 @@ import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion, Variants } from "motion/react";
+import { useNewsletter } from "@/hooks/use-newsletter";
+import { useState } from "react";
+import { toast } from "sonner";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -26,6 +29,28 @@ const Blog = () => {
   const featured = blogs.length > 0 ? blogs[0] : null;
   const others = blogs.length > 1 ? blogs.slice(1) : [];
 
+  const { mutate: subscribe, isPending } = useNewsletter();
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    subscribe(
+      email,
+      {
+        onSuccess: () => {
+          toast.success("Successfully subscribed to the newsletter!");
+          setEmail("");
+        },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onError: (error: any) => {
+          toast.error(error?.message || "Failed to subscribe. Please try again.");
+        },
+      }
+    );
+  };
+   
   if (isLoading) {
       return (
           <div className="container mx-auto px-4 py-20">
@@ -216,15 +241,18 @@ const Blog = () => {
           <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-6">
             Get the latest tips and guides delivered to your inbox.
           </p>
-          <form className="flex flex-col sm:flex-row gap-2 sm:gap-3" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col sm:flex-row gap-2 sm:gap-3" onSubmit={handleSubscribe}>
             <input
               type="email"
               placeholder="Enter your email"
               className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={isPending}
             />
-            <Button type="submit" className="h-10 sm:h-auto">
-              Subscribe
+            <Button type="submit" className="h-10 sm:h-auto" disabled={isPending}>
+              {isPending ? "Subscribing..." : "Subscribe"}
             </Button>
           </form>
         </div>

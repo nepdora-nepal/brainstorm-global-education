@@ -48,7 +48,7 @@ const countries = [
 
 const CountriesSection = () => {
   return (
-    <section className=" bg-background">
+    <section className="py-8 md:py-12 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
