@@ -22,11 +22,6 @@ import {
 
 import Image, { StaticImageData } from "next/image";
 
-import usaImage from "@/components/assets/usa-study.jpg";
-import ukImage from "@/components/assets/uk-study.jpg";
-import australiaImage from "@/components/assets/australia-study.jpg";
-import canadaImage from "@/components/assets/canada-study.jpg";
-import newzealandImage from "@/components/assets/newzealand-study.jpg";
 import { motion, Variants } from "motion/react";
 import CTASection from "../home/CTASection";
 import { ContactDialog } from "@/components/popup/contact";
@@ -575,7 +570,7 @@ const CountryPage = ({ countrySlug }: { countrySlug?: string }) => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {data.popularCities.map((city, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-xl aspect-[4/5] sm:aspect-square">
+              <div key={index} className="group relative overflow-hidden rounded-xl aspect-4/5 sm:aspect-square">
                 <Image
                   src={city.image}
                   alt={city.name}
