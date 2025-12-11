@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-const BASE_URL = "https://brainstorm-global-education.vercel.app";
+const BASE_URL = "https://www.brainstorm.edu.np";
 
 // Hardcoded country slugs (matches CountryPage.tsx)
 const countries = ["usa", "uk", "australia", "canada", "new-zealand"];
