@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/src/components/ui/card";
 import Image from "next/image";
+import { getImageUrl } from "@/src/config/site";
+import ImageWithFallback from "@/src/components/common/ImageWithFallback";
 
 const countries = [
   {
@@ -64,8 +66,9 @@ const CountriesSection = () => {
               <Card className="p-0 h-full border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 rounded-xl">
                 <CardContent className="p-0 h-full relative">
                   <div className={`relative overflow-hidden w-full ${index === 0 ? "h-64 lg:h-full" : "h-64 md:h-72"}`}>
-                    <Image
-                      src={country.image}
+                    <ImageWithFallback
+                      src={getImageUrl(country.image)}
+                      fallbackSrc={country.image}
                       alt={`Study in ${country.name}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"

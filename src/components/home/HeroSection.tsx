@@ -7,6 +7,8 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ContactDialog } from "@/src/components/popup/contact";
+import { getImageUrl } from "@/src/config/site";
+import ImageWithFallback from "@/src/components/common/ImageWithFallback";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -91,8 +93,9 @@ const HeroSection = () => {
             animate="visible"
             variants={fadeInRight}
           >
-            <Image
-              src="/assets/hero-students.jpg"
+            <ImageWithFallback
+              src={getImageUrl("/assets/hero-students.jpg")}
+              fallbackSrc="/assets/hero-students.jpg"
               width={1000}
               height={600}
               alt="International students celebrating graduation with global landmarks"
