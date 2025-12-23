@@ -1,9 +1,7 @@
-'use client';
+"use client";
+
 import { Button } from "@/src/components/ui/button";
-import {
-  CheckCircle, Clock, Calendar, ArrowRight, Phone
-} from "lucide-react";
-import ieltsImage from "@/src/components/assets/ielts-class.jpg";
+import { CheckCircle, Clock, Calendar, ArrowRight, Phone } from "lucide-react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ContactDialog } from "@/src/components/popup/contact";
@@ -76,15 +74,15 @@ const IeltsPte = () => {
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
-        {/* Background Pattern (Copied from Consultancy Hero Section) */}
+        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
             style={{
               backgroundImage: `
-          repeating-linear-gradient(0deg, transparent, transparent 50px, currentColor 50px, currentColor 51px),
-          repeating-linear-gradient(90deg, transparent, transparent 50px, currentColor 50px, currentColor 51px)
-        `
+                repeating-linear-gradient(0deg, transparent, transparent 50px, currentColor 50px, currentColor 51px),
+                repeating-linear-gradient(90deg, transparent, transparent 50px, currentColor 50px, currentColor 51px)
+              `
             }}
           />
         </div>
@@ -129,7 +127,7 @@ const IeltsPte = () => {
 
             <div className="relative hidden lg:block">
               <Image
-                src={ieltsImage}
+                src="/assets/ielts-class.jpg"
                 width={500}
                 height={500}
                 alt="IELTS and PTE preparation class"

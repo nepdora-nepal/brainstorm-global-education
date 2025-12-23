@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Badge } from "@/src/components/ui/badge";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import heroImage from "@/src/components/assets/hero-students.jpg";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ContactDialog } from "@/src/components/popup/contact";
@@ -29,7 +28,7 @@ const fadeInRight: Variants = {
 
 const HeroSection = () => {
   return (
-    <section className="relative  overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -50,8 +49,7 @@ const HeroSection = () => {
               🇳🇵 Nepal&apos;s Trusted Education Partner
             </Badge>
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              Best Abroad Study {" "}
-              <span className="text-primary">Consultancy</span>{" "}<br />
+              Best Abroad Study <span className="text-primary">Consultancy</span><br />
               In Nepal
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
@@ -65,7 +63,7 @@ const HeroSection = () => {
                   Book Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </ContactDialog>
-              <Button asChild variant="outline" size="lg" className="text-base ">
+              <Button asChild variant="outline" size="lg" className="text-base">
                 <Link href="/about">Learn More About Us</Link>
               </Button>
             </div>
@@ -94,7 +92,7 @@ const HeroSection = () => {
             variants={fadeInRight}
           >
             <Image
-              src={heroImage}
+              src="/assets/hero-students.jpg"
               width={1000}
               height={600}
               alt="International students celebrating graduation with global landmarks"
