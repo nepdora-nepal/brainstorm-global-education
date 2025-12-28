@@ -4,15 +4,15 @@ import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Badge } from "@/src/components/ui/badge";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import heroImage from "@/src/components/assets/hero-students.jpg";
-import Image from "next/image";
+import ImageWithFallback from "@/src/components/common/ImageWithFallback";
+import images from "@/images.json";
 import { motion, Variants } from "framer-motion";
 import { ContactDialog } from "@/src/components/popup/contact";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" }
   }
@@ -20,8 +20,8 @@ const fadeInUp: Variants = {
 
 const fadeInRight: Variants = {
   hidden: { opacity: 0, x: 30 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     x: 0,
     transition: { duration: 0.8, ease: "easeOut", delay: 0.2 }
   }
@@ -51,11 +51,11 @@ const HeroSection = () => {
             </Badge>
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               Best Abroad Study {" "}
-              <span className="text-primary">Consultancy</span>{" "}<br/>
+              <span className="text-primary">Consultancy</span>{" "}<br />
               In Nepal
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-              Expert guidance for studying in USA, UK, Australia, Canada & New Zealand. 
+              Expert guidance for studying in USA, UK, Australia, Canada & New Zealand.
               From course selection to visa processing — we&apos;ve got you covered.
             </p>
 
@@ -87,19 +87,26 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Image */}
-          <motion.div 
-            className="relative hidden lg:block"
+          <motion.div
+            className="relative hidden lg:block justify-center lg:justify-end"
             initial="hidden"
             animate="visible"
             variants={fadeInRight}
           >
-            <Image
-              src={heroImage}
-              width={1000}
-              height={600}
-              alt="International students celebrating graduation with global landmarks"
-              className="w-full h-auto rounded-2xl shadow-lg"
-            />
+            <div className="w-full max-w-lg lg:max-w-none rounded-xl shadow-2xl overflow-hidden aspect-video relative group">
+              <ImageWithFallback
+                id="hero"
+                src={images.hero}
+                fallbackSrc={images.hero}
+                alt="International students celebrating graduation"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover rounded-xl transform transition-transform duration-500 ease-in-out group-hover:scale-105"
+              />
+              {/* Subtle glassmorphism overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-background/50 rounded-xl opacity-70 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
           </motion.div>
         </div>
       </div>

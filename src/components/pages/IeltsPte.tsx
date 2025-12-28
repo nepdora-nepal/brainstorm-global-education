@@ -2,11 +2,10 @@
 
 import { Button } from "@/src/components/ui/button";
 import { CheckCircle, Clock, Calendar, ArrowRight, Phone } from "lucide-react";
-import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ContactDialog } from "@/src/components/popup/contact";
-import { getImageUrl } from "@/src/config/site";
 import ImageWithFallback from "@/src/components/common/ImageWithFallback";
+import images from "@/images.json";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -129,8 +128,9 @@ const IeltsPte = () => {
 
             <div className="relative hidden lg:block">
               <ImageWithFallback
-                src={getImageUrl("/assets/ielts-class.jpg")}
-                fallbackSrc="/assets/ielts-class.jpg"
+                id="ielts_class"
+                src={images.ielts_class}
+                fallbackSrc={images.ielts_class}
                 width={500}
                 height={500}
                 alt="IELTS and PTE preparation class"

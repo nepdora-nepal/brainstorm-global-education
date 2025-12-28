@@ -1,43 +1,42 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/src/components/ui/card";
-import Image from "next/image";
-import { getImageUrl } from "@/src/config/site";
 import ImageWithFallback from "@/src/components/common/ImageWithFallback";
+import images from "@/images.json";
 
 const countries = [
   {
     name: "USA",
     slug: "usa",
-    image: "/assets/usa-study.jpg",
+    image: "usa",
     description: "Home to Ivy League universities and world-leading research institutions.",
     universities: "4000+",
   },
   {
     name: "UK",
     slug: "uk",
-    image: "/assets/uk-study.jpg",
+    image: "uk",
     description: "Historic universities with globally recognized degrees and rich culture.",
     universities: "160+",
   },
   {
     name: "Australia",
     slug: "australia",
-    image: "/assets/australia-study.jpg",
+    image: "australia",
     description: "High quality education with excellent post-study work opportunities.",
     universities: "43",
   },
   {
     name: "Canada",
     slug: "canada",
-    image: "/assets/canada-study.jpg",
+    image: "canada",
     description: "Affordable education with pathways to permanent residency.",
     universities: "100+",
   },
   {
     name: "New Zealand",
-    slug: "new-zealand",
-    image: "/assets/newzealand-study.jpg",
+    slug: "new_zealand",
+    image: "new_zealand",
     description: "Safe, beautiful country with quality education and work rights.",
     universities: "8",
   },
@@ -67,8 +66,9 @@ const CountriesSection = () => {
                 <CardContent className="p-0 h-full relative">
                   <div className={`relative overflow-hidden w-full ${index === 0 ? "h-64 lg:h-full" : "h-64 md:h-72"}`}>
                     <ImageWithFallback
-                      src={getImageUrl(country.image)}
-                      fallbackSrc={country.image}
+                      id={country.image}
+                      src={images[country.image as keyof typeof images]}
+                      fallbackSrc={images[country.image as keyof typeof images]}
                       alt={`Study in ${country.name}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
